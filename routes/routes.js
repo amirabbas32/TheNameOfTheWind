@@ -4,6 +4,10 @@ module.exports = router;
 
 const Model = require("../models/model");
 
+router.get("/", function (req, res) {
+  res.sendFile(__dirname + "/index.html");
+});
+
 //Post Method
 router.post("/post", (req, res) => {
   res.send("Post API");
@@ -21,7 +25,7 @@ router.get("/getAll", async (req, res) => {
 
 //Get by ID Method
 router.get("/getOne/:id", (req, res) => {
-  res.send("Get by ID API");
+  res.send(req.params.id);
 });
 
 //Update by ID Method

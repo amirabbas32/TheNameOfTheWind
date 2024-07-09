@@ -7,6 +7,8 @@ app.listen(3000, () => {
   console.log(`Server Started at ${3000}`);
 });
 
+app.use("/static", express.static("public"));
+
 require("dotenv").config();
 const mongoString = process.env.DATABASE_URL;
 
